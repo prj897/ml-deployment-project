@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Breast Cancer Prediction</title>
+</head>
+<body>
+  <h2>Breast Cancer Prediction (Logistic Regression)</h2>
+
+  <form method="POST">
+    {% for f in features %}
+      <label>{{ f }}:</label><br>
+      <input type="number" step="any" name="{{ f }}" required><br><br>
+    {% endfor %}
+    <button type="submit">Predict</button>
+  </form>
+
+  {% if prediction_text %}
+    <h3>Result: {{ prediction_text }}</h3>
+  {% endif %}
+</body>
+</html>
