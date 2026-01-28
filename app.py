@@ -12,7 +12,6 @@ with open(os.path.join(BASE_DIR, "model", "model.pkl"), "rb") as f:
     model = pickle.load(f)
 
 FEATURES = [
-    "ID",
     "clump_thickness",
     "uniformity_cell_size",
     "uniformity_cell_shape",
@@ -23,6 +22,7 @@ FEATURES = [
     "normal_nucleoli",
     "mitoses",
 ]
+
 
 @app.route("/", methods=["GET", "POST"])
 def home():
